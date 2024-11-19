@@ -1,5 +1,5 @@
 import React from "react";
-import "../home/Card.css"; // CSS faylına istinad
+import "./Card.css"; // CSS faylına istinad
 
 const Card = ({ image, title, price }) => {
   return (

@@ -1,10 +1,10 @@
 import Navbar from './Navbar'
-import Card from './Card'
+import CardList from './Cardlist'
 const MainPage = () => {
   return (
     <div>
         <Navbar />
-        <Card />
+        <CardList />
     </div>
   )
 }
