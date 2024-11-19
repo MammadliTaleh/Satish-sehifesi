@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 20px;
+    background-color: #f5f0f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-section .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .search-section .search-input {
+    width: 400px;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .cart-section {
+    position: relative;
+  }
+
+  .cart-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .cart-icon {
+    width: 60px;
+    height: 40px;
+  }
