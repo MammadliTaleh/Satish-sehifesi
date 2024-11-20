@@ -1,3 +1,4 @@
+
 import Navbar from './Navbar'
 import CardList from './Cardlist'
 const MainPage = () => {
