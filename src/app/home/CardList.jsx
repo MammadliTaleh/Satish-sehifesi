@@ -42,15 +42,6 @@ const CardList = () => {
         />
       ))}
 
-      <style jsx>{`
-        .card-container {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 15px;
-          padding: 20px;
-        }
-      `}</style>
     </div>
   );
 };

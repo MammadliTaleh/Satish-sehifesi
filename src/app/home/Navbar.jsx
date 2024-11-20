@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="icon-section">
         <img
-          src="https://w7.pngwing.com/pngs/719/645/png-transparent-mcdonalds-round-logo-thumbnail.png"
+          src="https://e7.pngegg.com/pngimages/359/743/png-clipart-logo-community-text-logo.png"
           alt="Logo"
           className="icon"
         />

@@ -3,12 +3,12 @@
     align-items: center;
     justify-content: space-around;
     padding: 10px 20px;
-    background-color: #f5f0f0;
+    background-image: url('https://i.pinimg.com/enabled_lo_mid/736x/db/b2/d1/dbb2d10b2d6d62f2e5005e365a04e2e9.jpg');
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .icon-section .icon {
-    width: 50px;
+    width: 65px;
     height: 50px;
   }
 
