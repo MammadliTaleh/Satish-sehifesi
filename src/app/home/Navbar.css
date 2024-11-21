@@ -1,4 +1,3 @@
-
 .navbar {
   display: flex;
   align-items: center;
@@ -8,11 +7,31 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
 .icon-section .icon {
   width: 65px;
   height: 50px;
 }
 
+/* Links Section */
+.links-section {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f4d03f;
+}
+
+/* Search */
 .search-section .search-input {
   width: 400px;
   padding: 10px 14px;
@@ -20,20 +39,31 @@
   border-radius: 4px;
 }
 
+/* Cart and Favorites */
 .cart-section {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.cart-button {
+.favorites-button, .cart-button {
   background: none;
   border: none;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  position: relative;
 }
 
-.cart-icon {
-  width: 60px;
-  height: 40px;
+.favorites-icon, .cart-icon {
+  width: 35px;
+  height: 35px;
+
+}
+
+.favorites-button span {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 5px;
+  display: flex;
 }
