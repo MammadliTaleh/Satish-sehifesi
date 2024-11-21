@@ -9,6 +9,8 @@
 }
 
 .card {
+  max-width: 200px;
+  width: 100%;
   border: 1px solid #FF9933;
   border-radius: 8px;
   overflow: hidden;
@@ -72,4 +74,69 @@
 
 .card-button:hover {
   background-color: #FF9900;
+}.cart-modal {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 300px;
+  max-height: 320px; /* Maksimum hündürlük */
+  background: white;
+  color: black;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  overflow-y: auto; /* Scroll yaradır */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px; /* Şəkilin ölçüsü */
+  height: 50px;
+  object-fit: contain; /* Şəkilin miqyasını tənzimləyir */
+  border-radius: 5px;
+}
+
+.cart-item span {
+  font-size: 14px;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.remove-button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cart-total {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: right;
+}
+
+.close-modal {
+    font-weight: 600;
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
 }

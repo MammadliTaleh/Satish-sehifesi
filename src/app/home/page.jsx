@@ -1,12 +1,39 @@
+"use client"
+import React, { useState } from "react";
+import Navbar from "./Navbar";
+import CardList from "./CardList";
+import Footer from "./Footer";
+const App = () => {
+  const [cartItems, setCartItems] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-import Navbar from './Navbar'
-import CardList from './Cardlist'
-const MainPage = () => {
+  // Add item to cart
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  };
+
+  // Remove item from cart
+  const removeFromCart = (index) => {
+    setCartItems(cartItems.filter((_, i) => i !== index));
+  };
+
+  // Toggle modal visibility
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div>
-        <Navbar />
-        <CardList />
+      <Navbar
+        cartItems={cartItems}
+        removeFromCart={removeFromCart}
+        toggleModal={toggleModal}
+        isModalOpen={isModalOpen}
+      />
+      <CardList addToCart={addToCart} />
+      <Footer />
     </div>
-  )
-}
-export default MainPage
+  );
+};
+
+export default App;
