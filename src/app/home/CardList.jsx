@@ -1,15 +1,20 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 import Card from "./Card";
-import ProductModal from "./ProductModal"; // Yeni modal komponentini daxil et
+import ProductModal from "./ProductModal";
 import "./CardList.css";
 
 const CardList = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal vəziyyəti
-  const [selectedProduct, setSelectedProduct] = useState(null); // Seçilmiş məhsul
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -33,30 +38,58 @@ const CardList = ({ addToCart }) => {
   if (loading) return <p>Məlumat Yüklənir...</p>;
   if (error) return <p>Məkumatın Yüklənməsində Problem Yaşandı: {error}</p>;
 
-  // Modalı bağlamaq üçün funksiya
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedProduct(null);
   };
 
-  // Məhsul seçildikdə modal açılır
   const openModal = (product) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
   };
 
-  return (
-    <div className="card-container">
-      {products.map((product) => (
-        <Card
-          key={product.id}
-          item={product}
-          addToCart={addToCart}
-          openModal={openModal} // Modalı açmaq üçün funksiya
-        />
-      ))}
+  // Bölünmüş məhsullar
+  const recommendedProducts = products.slice(0, 10); // Bəyənə biləcəklərin
+  const bestSellers = products.slice(10, 20); // Ən çox satılanlar
 
-      {/* Modalın görünməsi üçün */}
+  return (
+    <div>
+      <div className="section section-favorites">
+        <h2>Bəyənə biləcəklərin</h2>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={5}
+          navigation
+          pagination={{ clickable: true }}
+          modules={[Navigation, Pagination]}
+          className="swiper-container"
+        >
+          {recommendedProducts.map((product) => (
+            <SwiperSlide key={product.id}>
+              <Card item={product} addToCart={addToCart} openModal={openModal} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      <div className="section section-best-saller">
+        <h2>Ən çox satılanlar</h2>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={5}
+          navigation
+          pagination={{ clickable: true }}
+          modules={[Navigation, Pagination]}
+          className="swiper-container"
+        >
+          {bestSellers.map((product) => (
+            <SwiperSlide key={product.id}>
+              <Card item={product} addToCart={addToCart} openModal={openModal} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
       {isModalOpen && selectedProduct && (
         <ProductModal
           product={selectedProduct}
