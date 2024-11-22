@@ -21,7 +21,7 @@ const CardList = ({ addToCart }) => {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
         if (!response.ok) {
-          throw new Error("Məkumatın Yüklənməsində Problem Yaşandı");
+          throw new Error("Məlumatın Yüklənməsində Problem Yaşandı");
         }
         const data = await response.json();
         setProducts(data.slice(0, 20)); // Limit to 20 products

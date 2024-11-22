@@ -10,7 +10,7 @@ const ProductModal = ({ product, closeModal, addToCart }) => {
       addToCart({ ...product, size });
       closeModal(); // Modalı bağlayır
     } else {
-      alert("Ölçü seçin!");
+      alert("Bədən ölçüsü seçin!");
     }
   };
 
