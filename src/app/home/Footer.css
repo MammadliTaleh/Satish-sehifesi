@@ -1,5 +1,6 @@
 .footer {
-    background-image: url('https://i.pinimg.com/enabled_lo_mid/736x/db/b2/d1/dbb2d10b2d6d62f2e5005e365a04e2e9.jpg');
+  /* background-image: url('../../../public/Wallpaper\ Aesthetic\ Blue\ And\ Black\ at\ Lindalillie.jpeg'); */
+   background-color: #006699;
     padding: 20px 40px;
     font-family: Arial, sans-serif;
     color: white;
@@ -45,7 +46,7 @@
   }
   
   .footer-column ul li a:hover {
-    color: #FF9900;
+    color: #f4d03f;
   }
   
   .social-icons {

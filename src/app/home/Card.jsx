@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import "./Card.css";
+import { TiShoppingCart } from "react-icons/ti";
 
 const Card = ({ item, addToCart, openModal }) => {
   return (
@@ -11,7 +12,7 @@ const Card = ({ item, addToCart, openModal }) => {
         <div className="card-footer">
           <p className="card-price">${item.price.toFixed(2)}</p>
           <button onClick={(e) => { e.stopPropagation(); addToCart(item); }} className="card-button">
-            Əlavə et
+           <TiShoppingCart className="cart-icon"/> <p>Əlavə et</p>
           </button>
         </div>
       </div>

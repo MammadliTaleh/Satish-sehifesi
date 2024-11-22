@@ -69,7 +69,7 @@
   }
   
   .modal-right button {
-    background-color: #FF9933;
+    background-color: #009999;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -81,7 +81,7 @@
   }
   
   .modal-right button:hover {
-    background-color: #FF9900;
+    background-color: #003366;
   }
   
   /* X iconu üçün tərtibat */

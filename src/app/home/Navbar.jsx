@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import "./Navbar.css";
+import { TiShoppingCart } from "react-icons/ti";
 
 const Navbar = ({ cartItems, removeFromCart, toggleModal, isModalOpen }) => {
   const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
@@ -27,19 +28,11 @@ const Navbar = ({ cartItems, removeFromCart, toggleModal, isModalOpen }) => {
           className="search-input"
         />
       </div>
-      <button className="favorites-button">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/833/833472.png" /* Heart icon */
-            alt="Favorites"
-            className="favorites-icon"
-          />
-          <span>Favorites</span>
-        </button>
       <div className="cart-section">
         <button className="cart-button" onClick={toggleModal}>
-          <img
-            src="https://banner2.cleanpng.com/20180816/yxl/kisspng-computer-icons-logo-symbol-basket-shopping-downloadicons-net-sharing-icons-for-your-projects-5b74f732baf8a9.1506309215343921147659.jpg"
-            alt="Cart"
+          <TiShoppingCart
+            size={50}
+             style={{color:"white"}}
             className="cart-icon"
           />
           <span className="cart-count">{cartItems.length}</span>
