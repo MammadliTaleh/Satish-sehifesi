@@ -4,7 +4,7 @@
   justify-content: space-around;
   padding: 10px 20px;
   background-image: url('../../../public/71d45f3f-ac95-405b-a76e-bbeafeac10af.jpeg');
-  object-fit:contain;
+  object-fit: contain;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -46,6 +46,7 @@
   align-items: center;
   gap: 15px;
 }
+
 .favorites-button, .cart-button {
   background: none;
   border: none;
@@ -60,4 +61,27 @@
   color: #fff;
   margin-top: 5px;
   display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .search-section .search-input {
+    width: 300px; /* Axtarış sahəsini kiçilt */
+  }
+}
+
+@media (max-width: 768px) {
+  .links-section {
+    display: none; /* Linkləri gizlət */
+  }
+
+  .search-section .search-input {
+    width: 250px; /* Daha çox kiçilt planşetlər üçün */
+  }
+}
+
+@media (max-width: 480px) {
+  .search-section .search-input {
+    width: 150px; /* Mobil üçün daha da kiçik */
+  }
 }
