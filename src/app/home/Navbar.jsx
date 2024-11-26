@@ -20,7 +20,7 @@ const Navbar = ({ cartItems, removeFromCart, toggleModal, isModalOpen }) => {
         <a href="#" className="nav-link">About</a>
         <a href="#" className="nav-link">Contact Us</a>
       </div>
-         {/* Search Section */}
+      
          <div className="search-section">
         <input
           type="text"

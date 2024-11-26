@@ -1,6 +1,6 @@
-// components/ProductModal.js
+
 import React, { useState } from "react";
-import "./ProductModal.css"; // Modalın CSS tərtibatı
+import "./ProductModal.css"; 
 
 const ProductModal = ({ product, closeModal, addToCart }) => {
   const [size, setSize] = useState("");
