@@ -36,7 +36,7 @@ const CardList = ({ addToCart }) => {
   }, []);
 
   if (loading) return <p>Məlumat Yüklənir...</p>;
-  if (error) return <p>Məkumatın Yüklənməsində Problem Yaşandı: {error}</p>;
+  if (error) return <p>Məlumatın Yüklənməsində Problem Yaşandı: {error}</p>;
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -63,6 +63,13 @@ const CardList = ({ addToCart }) => {
           pagination={{ clickable: true }}
           modules={[Navigation, Pagination]}
           className="swiper-container"
+          breakpoints={{
+            1025: { slidesPerView: 5, spaceBetween: 20 },
+            1024: { slidesPerView: 4, spaceBetween: 20 },
+            768: { slidesPerView: 3, spaceBetween: 15 },
+            480: { slidesPerView: 2, spaceBetween: 10 },
+            0: { slidesPerView: 1, spaceBetween: 5 },
+          }}
         >
           {recommendedProducts.map((product) => (
             <SwiperSlide key={product.id}>
@@ -81,6 +88,13 @@ const CardList = ({ addToCart }) => {
           pagination={{ clickable: true }}
           modules={[Navigation, Pagination]}
           className="swiper-container"
+          breakpoints={{
+            1025: { slidesPerView: 5, spaceBetween: 20 },
+            1024: { slidesPerView: 4, spaceBetween: 20 },
+            768: { slidesPerView: 3, spaceBetween: 15 },
+            480: { slidesPerView: 2, spaceBetween: 10 },
+            0: { slidesPerView: 1, spaceBetween: 5 },
+          }}
         >
           {bestSellers.map((product) => (
             <SwiperSlide key={product.id}>
