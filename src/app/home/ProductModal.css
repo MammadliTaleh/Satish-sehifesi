@@ -168,9 +168,6 @@
   .modal-right .price {
       font-size: 14px; /* Qiymət daha da kiçilir */
   }
-  .modal-right button{
-    
-  }
   .modal-right select, .modal-right button {
       font-size: 13px; /* Form elementləri daha da kiçilir */
   }
