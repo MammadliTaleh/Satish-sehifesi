@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
-import "./Navbar.css";
-import { TiShoppingCart } from "react-icons/ti";
+import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
+import { TiShoppingCart } from "react-icons/ti";
+import "./Navbar.css";
 
-const Navbar = ({ cartItems }) => {
+const Navbar = () => {
+  const cartItems = useSelector((state) => state.cart.items);
   const router = useRouter();
 
   return (
@@ -21,17 +23,10 @@ const Navbar = ({ cartItems }) => {
         <a href="#" className="nav-link">About</a>
         <a href="#" className="nav-link">Contact Us</a>
       </div>
-      <div className="search-section">
-        <input
-          type="text"
-          placeholder="Axtarış..."
-          className="search-input"
-        />
-      </div>
       <div className="cart-section">
         <button
           className="cart-button"
-          onClick={() => router.push("/cart")} // Burada /cart səhifəsinə yönləndiririk
+          onClick={() => router.push("/cart")}
         >
           <TiShoppingCart size={50} style={{ color: "white" }} className="cart-icon" />
           <span className="cart-count">{cartItems.length}</span>
@@ -41,4 +36,4 @@ const Navbar = ({ cartItems }) => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

@@ -1,19 +1,23 @@
-"use client"
-import React from "react";
-import "./Card.css";
-import { TiShoppingCart } from "react-icons/ti";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../CartSlice";
+import './Card.css'
 
-const Card = ({ item, addToCart, openModal }) => {
+const Card = ({ item }) => {
+  const dispatch = useDispatch();
+
   return (
-    <div className="card" onClick={() => openModal(item)}>
+    <div className="card">
       <img src={item.image} alt={item.title} className="card-image" />
       <div className="card-body">
         <h3 className="card-title">{item.title}</h3>
         <div className="card-footer">
-          <p className="card-price">${item.price.toFixed(2)}</p>
-          <button onClick={(e) => { e.stopPropagation(); addToCart(item); }} className="card-button">
-           <TiShoppingCart className="cart-icon"/> <p>Əlavə et</p>
-          </button>
+        <p className="card-price">${item.price.toFixed(2)}</p>
+        <button
+          onClick={() => dispatch(addItemToCart(item))}
+          className="card-button"
+        >
+          Əlavə et
+        </button>
         </div>
       </div>
     </div>
