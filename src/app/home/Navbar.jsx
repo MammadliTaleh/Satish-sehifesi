@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import React from "react";
 import "./Navbar.css";
 import { TiShoppingCart } from "react-icons/ti";
+import { useRouter } from "next/navigation";
 
-const Navbar = ({ cartItems, removeFromCart, toggleModal, isModalOpen }) => {
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+const Navbar = ({ cartItems }) => {
+  const router = useRouter();
 
   return (
     <nav className="navbar">
@@ -20,8 +21,7 @@ const Navbar = ({ cartItems, removeFromCart, toggleModal, isModalOpen }) => {
         <a href="#" className="nav-link">About</a>
         <a href="#" className="nav-link">Contact Us</a>
       </div>
-      
-         <div className="search-section">
+      <div className="search-section">
         <input
           type="text"
           placeholder="Axtarış..."
@@ -29,40 +29,16 @@ const Navbar = ({ cartItems, removeFromCart, toggleModal, isModalOpen }) => {
         />
       </div>
       <div className="cart-section">
-        <button className="cart-button" onClick={toggleModal}>
-          <TiShoppingCart
-            size={50}
-             style={{color:"white"}}
-            className="cart-icon"
-          />
+        <button
+          className="cart-button"
+          onClick={() => router.push("/cart")} // Burada /cart səhifəsinə yönləndiririk
+        >
+          <TiShoppingCart size={50} style={{ color: "white" }} className="cart-icon" />
           <span className="cart-count">{cartItems.length}</span>
         </button>
       </div>
-      {isModalOpen && (
-  <div className="cart-modal">
-    <h3 className="modal-h3">Səbətindəkilər</h3>
-    {cartItems.length === 0 ? (
-      <p className="modal-p">Səbətiniz boşdur</p>
-    ) : (
-      <ul>
-        {cartItems.map((item, index) => (
-          <li key={index} className="cart-item">
-            <img src={item.image} alt={item.title} />
-            <span>${item.price.toFixed(2)}</span>
-            <button className="remove-button" onClick={() => removeFromCart(index)}>Çıxar</button>
-          </li>
-        ))}
-      </ul>
-    )}
-    <div className="cart-total">Toplam: ${totalPrice.toFixed(2)}</div>
-    <button className="close-modal" onClick={toggleModal}>
-      Bağla
-    </button>
-  </div>
-)}
-
     </nav>
   );
 };
 
-export default Navbar;
+export default Navbar; 
