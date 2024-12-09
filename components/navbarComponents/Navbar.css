@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 10px 20px;
-  background-image: url('../../../public/71d45f3f-ac95-405b-a76e-bbeafeac10af.jpeg');
+  background-image: url('../../public/71d45f3f-ac95-405b-a76e-bbeafeac10af.jpeg');
   object-fit: contain;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

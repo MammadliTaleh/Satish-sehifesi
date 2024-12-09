@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
-import Navbar from "./Navbar";
-import CardList from "./CardList";
-import Footer from "./Footer";
+import Navbar from "../../../components/navbarComponents/Navbar";
+import CardList from "../../../components/cardListComponents/CardList";
+import Footer from "../../../components/footerComponents/Footer";
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);

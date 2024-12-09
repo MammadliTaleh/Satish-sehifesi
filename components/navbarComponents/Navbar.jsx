@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
@@ -16,6 +17,7 @@ const Navbar = () => {
           src="https://e7.pngegg.com/pngimages/359/743/png-clipart-logo-community-text-logo.png"
           alt="Logo"
           className="icon"
+          onClick={() => router.push("/")}
         />
       </div>
       <div className="links-section">
@@ -24,11 +26,8 @@ const Navbar = () => {
         <a href="#" className="nav-link">Contact Us</a>
       </div>
       <div className="cart-section">
-        <button
-          className="cart-button"
-          onClick={() => router.push("/cart")}
-        >
-          <TiShoppingCart size={50} style={{ color: "white" }} className="cart-icon" />
+        <button className="cart-button" onClick={() => router.push("/cart")}>
+          <TiShoppingCart size={50} className="cart-icon" />
           <span className="cart-count">{cartItems.length}</span>
         </button>
       </div>
