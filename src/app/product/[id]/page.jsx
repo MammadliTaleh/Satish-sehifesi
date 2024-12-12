@@ -2,12 +2,15 @@
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../cartSlice";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 import "./ProductPage.css";
 
 export default function ItemPage({ params }) {
+  const router = useRouter();
   const dispatch = useDispatch();
   const [item, setItem] = useState(null);
-  const { id } = params;
+  const id = params.id;
 
   useEffect(() => {
     if (id) {
@@ -34,6 +37,12 @@ export default function ItemPage({ params }) {
           className="item-add-button"
         >
           Əlavə et
+        </button>
+        <button
+          onClick={() => router.push("/cart")}
+          className="item-add-button cart-button"
+        >
+          Səbətə Keç
         </button>
       </div>
     </div>

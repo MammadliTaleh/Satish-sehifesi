@@ -77,9 +77,17 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
 }
+.cart-button {
+  background-color: #ff4d4d;
+}
 
 .item-add-button:hover {
   background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
+}
+.cart-button:hover {
+  background-color: #ff1a1a;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3);
 }
